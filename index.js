@@ -31,9 +31,9 @@ module.exports = function (options) {
             this.push(file);
             callback();
         } catch (err) {
-            this.emit('error', new PluginError(PLUGIN_NAME, err, {fileName: file.path}));
+            this.emit('error', new PluginError(PLUGIN_NAME, err, {fileName: file.path/*,showStack: true*/}));
         }
     };
 
-    return through.obj(transform);
+   return through.obj(transform);
 }
